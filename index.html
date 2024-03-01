@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body onload="data_get1()">
+    <main>
+        <div class="menu">
+            <h2>なう草:</h2>
+            <h1>197</h1>
+            <br><br>
+            <h2>ランキング</h2>
+            <span>197</span><span style="font-size: 0.7em;">草 </span>かなやん</span><br>
+            <span>150</span><span style="font-size: 0.7em;">草 </span>くまぁ</span>
+            <br><input type="button" value="get" onclick="data_get1()">
+            <br><input type="button" value="start" onclick="start()">
+        </div>
+        <div class="game">
+            <img src="/kusa.png" id="kusa">
+            <div id="water-group" class="question">
+                <div id="water1" class="water">
+                    <img src="/water.svg" class="water-image">
+                    <span id="water_text1" class="water_text">Leady</span>
+                </div>
+            </div>
+            <div id="out" style="display: none;">
+                <span class="no">残念無念</span>
+                <span id="out_question">先生</span>
+                <span id="out_collect_answer">teacher</span>
+                <input type="text" id="out_answer" placeholder="正しい回答を入力" spellcheck="false" autocomplete="off" oninput="change(event)">
+            </div>
+            <input type="text" id="answer" placeholder="回答を入力" spellcheck="false" autocomplete="off" onkeydown="pushKey(event)">
+        </div>
+    </main>
+    <script src="/script.js"></script>
+</body>
+
+</html>
