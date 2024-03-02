@@ -89,7 +89,8 @@ function restart() {
     document.getElementById("answer").focus()
     out_window.style.display = 'none';
     out_answer.value = '';
-    dataArray.splice(current_question_num + 3, 0, { "question": "🔴" + current_question, "answer": current_answer });
+    dataArray.splice(current_question_num + 3, 0, { "question": "🟡" + current_question, "answer": current_answer });
+    dataArray.splice(current_question_num + 10, 0, { "question": "🔴" + current_question, "answer": current_answer });
     current_question_num--;
     answer.value = '';
     start()
