@@ -80,7 +80,7 @@ function pushKey(event) {
             start()
         } else {
             event.target.value = '';
-            current_kusa = current_kusa - 10;
+            current_kusa = current_kusa - 20;
             kusa_image.style.height = current_kusa + 'px';
             now_kusa.innerHTML = current_kusa;
         }
@@ -106,7 +106,7 @@ function out() {
     out_collect_answer.innerHTML = current_answer;
     out_window.style.display = 'block';
     out_answer.focus();
-    current_kusa = current_kusa - 10;
+    current_kusa = current_kusa - 20;
     kusa_image.style.height = current_kusa + 'px';
     now_kusa.innerHTML = current_kusa;
 }
