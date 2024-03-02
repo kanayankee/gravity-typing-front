@@ -89,6 +89,7 @@ function restart() {
     out_window.style.display = 'none';
     out_answer.value = '';
     current_question_num--;
+    answer.value = '';
     start()
 }
 
