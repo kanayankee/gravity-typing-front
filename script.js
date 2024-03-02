@@ -73,7 +73,7 @@ function pushKey(event) {
         var input = event.target.value;
         if (input == current_answer) {
             event.target.value = '';
-            current_kusa = current_kusa + ((window.innerHeight - water1_position_y) * 0.05);
+            current_kusa = current_kusa + ((window.innerHeight - water1_position_y) * 0.1);
             kusa_image.style.height = current_kusa + 'px';
             start()
         } else {
