@@ -78,7 +78,7 @@ function pushKey(event) {
             start()
         } else {
             event.target.value = '';
-            current_kusa = current_kusa - 30;
+            current_kusa = current_kusa - 10;
             kusa_image.style.height = current_kusa + 'px';
         }
     }
@@ -102,7 +102,7 @@ function out() {
     out_collect_answer.innerHTML = current_answer;
     out_window.style.display = 'block';
     out_answer.focus();
-    current_kusa = current_kusa - 30;
+    current_kusa = current_kusa - 10;
     kusa_image.style.height = current_kusa + 'px';
 }
 
