@@ -24,6 +24,7 @@ var kusa_image = document.getElementById('kusa');
 var current_kusa = 0;
 var answer = document.getElementById('answer');
 var now_kusa = document.getElementById('now_kusa');
+var now_per = document.getElementById('now_per');
 
 function data_get1() {
     var id = new URLSearchParams(window.location.search).get('id');
@@ -56,6 +57,7 @@ function start() {
     water_text1.innerHTML = current_question;
     out_question.innerHTML = current_question;
     out_collect_answer.innerHTML = current_answer;
+
     answer.focus();
     gravity()
 }
@@ -100,7 +102,7 @@ function next() {
 function out() {
     stop = true;
     out_question.innerHTML = current_question;
-    out_collect_answer.innerHTML = current_answer;
+    out_collect_answer.innerHTML = current_answer
     out_window.style.display = 'block';
     out_answer.focus();
     updateKusa(current_kusa - 30);
@@ -137,4 +139,5 @@ function updateKusa(kusa) {
     kusa = Math.floor(kusa);
     kusa_image.style.height = kusa + 'px';
     now_kusa.innerHTML = kusa;
+    now_per.innerHTML = Math.floor(current_question_num / dataArray.length * 100) + "%";
 }
