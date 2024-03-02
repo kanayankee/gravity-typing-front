@@ -23,6 +23,7 @@ var out_collect_answer = document.getElementById('out_collect_answer');
 var kusa_image = document.getElementById('kusa');
 var current_kusa = 0;
 var answer = document.getElementById('answer');
+var now_kusa = document.getElementById('now_kusa');
 
 function data_get1() {
     var id = new URLSearchParams(window.location.search).get('id');
@@ -75,11 +76,13 @@ function pushKey(event) {
             event.target.value = '';
             current_kusa = current_kusa + ((window.innerHeight - water1_position_y) * 0.1);
             kusa_image.style.height = current_kusa + 'px';
+            now_kusa.innerHTML = current_kusa;
             start()
         } else {
             event.target.value = '';
             current_kusa = current_kusa - 10;
             kusa_image.style.height = current_kusa + 'px';
+            now_kusa.innerHTML = current_kusa;
         }
     }
 }
@@ -105,6 +108,7 @@ function out() {
     out_answer.focus();
     current_kusa = current_kusa - 10;
     kusa_image.style.height = current_kusa + 'px';
+    now_kusa.innerHTML = current_kusa;
 }
 
 function gravity() {
