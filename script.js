@@ -74,15 +74,11 @@ function pushKey(event) {
         var input = event.target.value;
         if (input == current_answer) {
             event.target.value = '';
-            current_kusa = current_kusa + ((window.innerHeight - water1_position_y) * 0.1);
-            kusa_image.style.height = current_kusa + 'px';
-            now_kusa.innerHTML = current_kusa;
+            updateKusa(current_kusa + ((window.innerHeight - water1_position_y) * 0.1));
             start()
         } else {
             event.target.value = '';
-            current_kusa = current_kusa - 20;
-            kusa_image.style.height = current_kusa + 'px';
-            now_kusa.innerHTML = current_kusa;
+            updateKusa(current_kusa - 30);
         }
     }
 }
@@ -91,6 +87,7 @@ function restart() {
     document.getElementById("answer").focus()
     out_window.style.display = 'none';
     out_answer.value = '';
+    dataArray.splice(current_question_num + 3, 0, { "question": "🔴" + current_question, "answer": current_answer });
     current_question_num--;
     answer.value = '';
     start()
@@ -106,9 +103,7 @@ function out() {
     out_collect_answer.innerHTML = current_answer;
     out_window.style.display = 'block';
     out_answer.focus();
-    current_kusa = current_kusa - 20;
-    kusa_image.style.height = current_kusa + 'px';
-    now_kusa.innerHTML = current_kusa;
+    updateKusa(current_kusa - 30);
 }
 
 function gravity() {
@@ -133,3 +128,13 @@ document.addEventListener('keydown', function (event) {
         out();
     }
 });
+
+function updateKusa(kusa) {
+    current_kusa = kusa;
+    if (kusa < 0) {
+        kusa = 0;
+    }
+    kusa = Math.floor(kusa);
+    kusa_image.style.height = kusa + 'px';
+    now_kusa.innerHTML = kusa;
+}
