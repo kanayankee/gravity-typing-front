@@ -141,4 +141,7 @@ function updateKusa(kusa) {
     kusa_image.style.height = kusa + 'px';
     now_kusa.innerHTML = kusa;
     now_per.innerHTML = Math.floor(current_question_num / dataArray.length * 100) + "%";
+    if (Math.floor(current_question_num / dataArray.length * 100) > 100) {
+        alert("おつかれさまでした！\nメニューから学習記録をコピーしましょう！");
+    }
 }
