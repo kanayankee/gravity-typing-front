@@ -78,13 +78,17 @@ function pushKey(event) {
             start()
         } else {
             event.target.value = '';
+            current_kusa = current_kusa - 30;
+            kusa_image.style.height = current_kusa + 'px';
         }
     }
 }
 
-async function restart() {
+function restart() {
+    document.getElementById("answer").focus()
     out_window.style.display = 'none';
     out_answer.value = '';
+    current_question_num--;
     start()
 }
 
@@ -98,10 +102,11 @@ function out() {
     out_collect_answer.innerHTML = current_answer;
     out_window.style.display = 'block';
     out_answer.focus();
+    current_kusa = current_kusa - 30;
+    kusa_image.style.height = current_kusa + 'px';
 }
 
 function gravity() {
-    // while (stop == false) {
     if (stop == false) {
         if (water1_position_y > window.innerHeight) {
             out();
@@ -110,7 +115,6 @@ function gravity() {
             water1.style.top = water1_position_y + 'px';
         }
     }
-    // }
 }
 
 document.addEventListener('keydown', function (event) {
@@ -118,14 +122,6 @@ document.addEventListener('keydown', function (event) {
         out();
     }
 });
-
-function out() {
-    stop = true;
-    out_question.innerHTML = current_question;
-    out_collect_answer.innerHTML = current_answer;
-    out_window.style.display = 'block';
-    out_answer.focus();
-}
 
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
